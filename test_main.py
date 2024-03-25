@@ -7,21 +7,21 @@ from main import *
 
 class TestAssignment(unittest.TestCase):
 
-    # def test_str_raises_error(self):
-    #     errmsg = "Unsupported input type."
-    #     capturedOutput = io.StringIO()
-    #     sys.stdout = capturedOutput
-    #     to_hms("10")
-    #     sys.stdout = sys.__stdout__
-    #     displaystr = capturedOutput.getvalue().strip()
-    #     self.assertNotEqual(
-    #         displaystr, "",
-    #         msg="to_hms() does not display an error message when given a string"
-    #      )
-    #     self.assertTrue(
-    #         displaystr.startswith(errmsg),
-    #         msg="expected error message {errmsg!r}, got {displaystr!r}"
-    #     )
+    def test_str_raises_error(self):
+        errmsg = "Unsupported input type."
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        to_hms("10")
+        sys.stdout = sys.__stdout__
+        displaystr = capturedOutput.getvalue().strip()
+        self.assertNotEqual(
+            displaystr, "",
+            msg="to_hms() does not display an error message when given a string"
+         )
+        self.assertTrue(
+            displaystr.startswith(errmsg),
+            msg="expected error message {errmsg!r}, got {displaystr!r}"
+        )
 
     def test_value_7199(self):
         callstr = "to_hms(7199)"
