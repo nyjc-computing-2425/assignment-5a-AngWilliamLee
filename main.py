@@ -21,18 +21,18 @@ def to_hms(seconds: int) -> list:
     [1, 59, 59]
     """
 
-    if not all(char in '0123456789' for char in str(seconds)):
-      print("error1")
-    else:
-      seconds = int(seconds)
+    if type(seconds) == int and seconds >= 0:
       hours = seconds // 3600
-      minutes = (seconds % 3600) // 60
-      remaining_seconds = seconds % 60
-      return [hours, minutes, remaining_seconds]
+      seconds %= 3600
+      minutes = seconds // 60
+      seconds %= 60
+      return [hours, minutes, seconds]
+    else:
+      print("Unsupported input type.")
 
 
-user_input = input("Enter the number of seconds: ")
-print(to_hms(user_input))
+# user_input = input("Enter the number of seconds: ")
+# print(to_hms(user_input))
 
   
   
