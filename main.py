@@ -20,6 +20,23 @@ def to_hms(seconds: int) -> list:
     >>> to_hms(7199)
     [1, 59, 59]
     """
-    # Type your code below
-    pass
+
+    if type(seconds) == int and seconds >= 0:
+      hours = seconds // 3600
+      seconds %= 3600
+      minutes = seconds // 60
+      seconds %= 60
+      return [hours, minutes, seconds]
+    else:
+      print("Unsupported input type.")
+
+
+# user_input = input("Enter the number of seconds: ")
+# print(to_hms(user_input))
+
+  
+  
+
+
+
 
